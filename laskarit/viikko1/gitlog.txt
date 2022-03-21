@@ -1,0 +1,115 @@
+
+
+commit c3864a7c1211f9e0d1efff4e2909e955bae6609c
+Author: Mvaaras <mvaaras@gmail.com>
+Date:   Mon Mar 21 16:36:01 2022 +0200
+
+    uudelleennimetty ja poistettu
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 37ecb1ae4403223d22680ac87fc878fc628fcc16
+Author: Mvaaras <mvaaras@gmail.com>
+Date:   Mon Mar 21 16:32:32 2022 +0200
+
+    luotiin kansio tiedostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit c90d0bb0fe5e64dadcd1df7472177d30b6f45d16
+Author: Mvaaras <mvaaras@gmail.com>
+Date:   Mon Mar 21 16:24:24 2022 +0200
+
+    muutoksia tiedostoihin eka ja kolmas
+
+ eka.txt    |  6 ++----
+ kolmas.txt | 21 ++++++++++++++++++++-
+ 2 files changed, 22 insertions(+), 5 deletions(-)
+
+commit 576b783ff523d2ed41ed27a20f572bb09ed2323a
+Author: Mvaaras <mvaaras@gmail.com>
+Date:   Mon Mar 21 16:20:48 2022 +0200
+
+    uudelleennimettiin tiedosto
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 39c53065142a60cd04ee175553c7783a8703aa37
+Author: Mvaaras <mvaaras@gmail.com>
+Date:   Mon Mar 21 16:19:59 2022 +0200
+
+    poistettu "toinen"
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 539be2ca72eef8a2fd099d3a1cbd1f50043d5a8f
+Author: Mvaaras <mvaaras@gmail.com>
+Date:   Mon Mar 21 16:17:59 2022 +0200
+
+    muokattu tekstiä
+
+ tiedosto.txt | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+commit 531770d268b03a0894d417fdf45552f851fe809b
+Author: Mvaaras <mvaaras@gmail.com>
+Date:   Mon Mar 21 16:16:15 2022 +0200
+
+    lisättiin paljon tekstiä
+
+ tiedosto.txt | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+commit 5eba5e1a3d2ef6d4728a7aaf4630cd40d6104a6d
+Author: Mvaaras <mvaaras@gmail.com>
+Date:   Mon Mar 21 16:11:21 2022 +0200
+
+    luotu kansio "stuff" ja sisältö
+
+ stuff/stuff.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit aed6131bc6310b641f70f5f3388a3074ac5fa555
+Author: Mvaaras <mvaaras@gmail.com>
+Date:   Mon Mar 21 16:10:27 2022 +0200
+
+    muutettu toinen ja kolmas
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit b768ac36b904699ffd7a3d3d8d87ea952894f7e3
+Author: Mvaaras <mvaaras@gmail.com>
+Date:   Mon Mar 21 16:09:43 2022 +0200
+
+    lisättiin kolmas
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 29f5cb9b816022fa6eb86e76b45c2f9aed82eb10
+Author: Mvaaras <mvaaras@gmail.com>
+Date:   Mon Mar 21 16:08:40 2022 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit b2cc96428b66254c80f1c2f924fdc27290321fd9
+Author: Mvaaras <mvaaras@gmail.com>
+Date:   Mon Mar 21 16:07:31 2022 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
