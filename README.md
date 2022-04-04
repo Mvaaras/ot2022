@@ -1,4 +1,6 @@
-# Ohjelmistotekniikka, harjoitustyö
+# Muistipeli
+
+Muistipelissä tarkoitus on löytää kaksi samaa korttia. Muistipelisovelluksella kaksi pelaajaa voivat vuorotellen avata kortteja. Enemmän kortteja avannut pelaaja voittaa. Tämä muistipeli on luotu Helsingin Yliopiston Ohjelmistotekniikan kurssin harjoitustyöksi (Kevät 2022)
 
 ---
 
