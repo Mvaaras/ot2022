@@ -25,3 +25,4 @@ Perusversion jälkeen muistipeliä voidaan kehittää ehkä esim seuraavin keino
 - Eri kokoisia pelejä (eri määrä kortteja)
 - Enemmän kuin 2 pelaajaa
 - Ajoitettu yksinpelitila ("kelloa vastaan")
+- "Scoreboard"
