@@ -11,3 +11,5 @@ Muistipelissä tarkoitus on löytää kaksi samaa korttia. Muistipelisovelluksel
 [Työaikakirjanpito](/dokumentaatio/tyoaikakirjanpito.md)
 
 [Changelog](/dokumentaatio/changelog.md)
+
+[Luokkakaavio](/dokumentaatio/arkkitehtuuri.md)

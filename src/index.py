@@ -1,5 +1,3 @@
-from gamelogic import Game
-from gamelogic import Board
-from gamelogic import Card
+from interface import Interface
 
-game = Game(8)
+Start = Interface
