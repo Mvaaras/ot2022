@@ -65,6 +65,13 @@ class Game:
             self.points[self.turn-1] += 1
             return True
         return False
+    
+    def end_game(self):
+        if sum(self.points) == self.board.size:
+            if self.points[0] > self.points[1]:
+                return 1
+            return 2
+        return False
 
     def close_pair(self, card):
         if not self.not_closing:

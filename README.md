@@ -12,4 +12,4 @@ Muistipelissä tarkoitus on löytää kaksi samaa korttia. Muistipelisovelluksel
 
 [Changelog](/dokumentaatio/changelog.md)
 
-[Luokkakaavio](/dokumentaatio/arkkitehtuuri.md)
+[Arkkitehtuuri](/dokumentaatio/arkkitehtuuri.md)

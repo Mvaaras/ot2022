@@ -16,7 +16,7 @@ Sovelluksessa on kolme eri näkymää.
 
 ## Perusversion tarjoama toiminnallisuus
 
-Pelaaja voi pelata muistipeliä kaksinpelinä. Muistipeli sisältää satunnaisessa järjestyksessä olevia kortteja jotka voidaan avata klikkaamalla niistä. Kun kaksi korttia on avattu, jos ne ovat sama kortti, ne poistuvat pelistä. Muuten ne sulkeutuvat. Molemmilla pelaajilla on pisteet, joita saa lisää avaamalla pareja onnistuneesti.
+Pelaaja voi pelata muistipeliä kaksinpelinä. *(Valmis)*, Muistipeli sisältää satunnaisessa järjestyksessä olevia kortteja jotka voidaan avata klikkaamalla niistä. *(Valmis)* Kun kaksi korttia on avattu, jos ne ovat sama kortti, ne jäävät auki. *(Valmis)* Muuten ne sulkeutuvat. *(Valmis)* Molemmilla pelaajilla on pisteet, joita saa lisää avaamalla pareja onnistuneesti. *(Valmis)*
 
 ## Jatkokehitysideoita
 
