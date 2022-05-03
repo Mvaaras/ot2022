@@ -21,3 +21,9 @@ Muistipelissä tarkoitus on löytää kaksi samaa korttia. Muistipelisovelluksel
 
 1. Asenna tarvittavat riippuvuudet ajamalla komento "poetry install" projektin pääkansiossa
 2. Nyt voit käynnistää pelin komennolla "poetry run invoke start"
+
+## Hyödyllisiä komentoja
+
+Testien ajaminen: "poetry run invoke test"
+Coverage report: "poetry run invoke coverage-report"
+Pylint tarkistus: "poetry run invoke lint"
