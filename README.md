@@ -22,6 +22,10 @@ Muistipelissä tarkoitus on löytää kaksi samaa korttia. Muistipelisovelluksel
 1. Asenna tarvittavat riippuvuudet ajamalla komento "poetry install" projektin pääkansiossa
 2. Nyt voit käynnistää pelin komennolla "poetry run invoke start"
 
+## Releases
+
+[Releases](https://github.com/Mvaaras/ot2022/releases)
+
 ## Hyödyllisiä komentoja
 
 Testien ajaminen: "poetry run invoke test"
