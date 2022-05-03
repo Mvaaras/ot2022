@@ -4,6 +4,7 @@
 | :----:|:-----| :-----|
 | 4.4|~2 tuntia| Ohjelmointi aloitettu, pohja sovelluslogiikalle luotu ja ensimmäiset testit kirjoitettu|
 | 12.4|~4 tuntia| Käyttöliittymä pygamella pohjustettu, muistipeli nyt "pelattavissa"|
-| 12.4|~2 tuntia| Luotu aloitus- ja voittoruutu sekä selkeämpi käyttöliittymä pelatessa|
-| yht |8 tuntia| |
+| 26.4|~2 tuntia| Luotu aloitus- ja voittoruutu sekä selkeämpi käyttöliittymä pelatessa|
+| 3.5|~1 tunti| Lisätty yksinpelitilan logiikka- ja käyttöliittymäominaisuudet|
+| yht |9 tuntia| |
 

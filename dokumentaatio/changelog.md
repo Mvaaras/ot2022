@@ -11,3 +11,8 @@
 
 - Muokattu pygame-käyttöliittymää siten että se on käyttäjälle parempi ja hyödyntää kaikkea aiemmin kirjoitettua sovelluslogiikkaa
 - Luotu voittotilanteen tunnistava logiikka ja sitä vastaava ruutu käyttöliittymään
+
+## Viikko 6
+
+- Luotu muokattu versio pelilogiikasta yksinpelejä varten. Yksinpelissä tarkoitus on löytää kaikki parit mahdollisimman nopeasti. Jokainen avattu pari pienentää lopullista pistetulosta.
+- Luotu käyttöliittymään mahdollisuus valita yksin- ja moninpelin väliltä
