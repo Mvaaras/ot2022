@@ -16,6 +16,8 @@ Muistipelissä tarkoitus on löytää kaksi samaa korttia. Muistipelisovelluksel
 
 [Käyttöohje](/dokumentaatio/kayttohje.md)
 
+[Testaus](/dokumentaatio/testaus.md)
+
 
 ## Asennus
 
