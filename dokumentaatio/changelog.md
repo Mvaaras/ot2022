@@ -16,3 +16,7 @@
 
 - Luotu muokattu versio pelilogiikasta yksinpelejä varten. Yksinpelissä tarkoitus on löytää kaikki parit mahdollisimman nopeasti. Jokainen avattu pari pienentää lopullista pistetulosta.
 - Luotu käyttöliittymään mahdollisuus valita yksin- ja moninpelin väliltä
+
+## Viikko 7 (Loppupalautus)
+
+- Lisätty yksinpelitilan huipputuloksen tallennus sekä nappi josta sen voi nähdä

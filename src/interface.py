@@ -3,6 +3,7 @@ import os
 import pygame
 import pygame.freetype
 from gamelogic import Game, SinglePlayerGame
+from score_saving import ScoreSaving
 
 dirname = os.path.dirname(__file__)
 
@@ -60,7 +61,9 @@ class Interface:
     #screen mode 2: win screen
     #screen mode 3: singleplayer memory game
     #screen mode 4: singleplayer win screen
+    #screen mode 5: highscore screen
     screen_mode = 0
+    saving = ScoreSaving()
     all_sprites = pygame.sprite.Group()
     font = pygame.freetype.Font(None, size=50, font_index=0, resolution=0, ucs4=False)
 
@@ -76,16 +79,20 @@ class Interface:
             screen.fill((200,200,200))
             singleplayer_text = font.render("Singleplayer game", gray, bgcolor = (120, 120, 120))
             multiplayer_text = font.render("2 player game", gray, bgcolor = (120, 120, 120))
+            scoreboard_text = font.render("View highscore",
+                                        gray, bgcolor = (120, 120, 120), size=30)
             screen.blit(singleplayer_text[0], (10, 110))
             screen.blit(multiplayer_text[0], (10, 180))
+            screen.blit(scoreboard_text[0], (400, 300))
             pygame.display.update()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
+                    break
                 if event.type == pygame.MOUSEBUTTONDOWN:
-                    print(str(multiplayer_text[1]))
                     mouse_position = pygame.mouse.get_pos()
-                    if pygame.Rect(10, 110, singleplayer_text[1].width, singleplayer_text[1].height).collidepoint(mouse_position):
+                    if pygame.Rect(10, 110, singleplayer_text[1].width,
+                                singleplayer_text[1].height).collidepoint(mouse_position):
                         game = SinglePlayerGame(8)
                         visual_board = VisualBoard(game.board)
                         for card in visual_board.cards:
@@ -94,7 +101,8 @@ class Interface:
                         game_menu.update(0, 270, 640, 70)
                         end = False
                         screen_mode = 3
-                    if pygame.Rect(10, 180, multiplayer_text[1].width, multiplayer_text[1].height).collidepoint(mouse_position):
+                    if pygame.Rect(10, 180, multiplayer_text[1].width,
+                                multiplayer_text[1].height).collidepoint(mouse_position):
                         game = Game(8)
                         visual_board = VisualBoard(game.board)
                         for card in visual_board.cards:
@@ -103,6 +111,9 @@ class Interface:
                         game_menu.update(0,270,640,70)
                         end = False
                         screen_mode = 1
+                    if pygame.Rect(400, 300, scoreboard_text[1].width,
+                                scoreboard_text[1].height).collidepoint(mouse_position):
+                        screen_mode = 5
 
         if screen_mode == 1:
             screen.fill((200, 200, 200))
@@ -127,6 +138,7 @@ class Interface:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
+                    break
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_position = pygame.mouse.get_pos()
                     for card in visual_board.cards:
@@ -135,10 +147,6 @@ class Interface:
                                 card[0].update()
                                 all_sprites.draw(screen)
                                 pygame.display.update()
-                                # the logic is currenlty here
-                                # because I could not update the screen if I had it anywhere else
-                                # this is very much a bandaid and I will
-                                # be looking into ways to make this cleaner next week
                                 if end:
                                     time.sleep(wait_time)
                                     game.close_pair(card[1])
@@ -154,7 +162,8 @@ class Interface:
 
         if screen_mode == 2:
             screen.fill((180,180,180))
-            win_text = font.render("Player " + str(game.end_game()) + " wins", (0,0,0), bgcolor = (120,120,120))
+            win_text = font.render("Player " + str(game.end_game()) +
+                            " wins", (0,0,0), bgcolor = (120,120,120))
             again_text = font.render("Click anywhere to return to menu", (0,0,0), size = 40)
             screen.blit(win_text[0], (40,150))
             screen.blit(again_text[0], (10,230))
@@ -162,6 +171,7 @@ class Interface:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
+                    break
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     game = Game(8)
                     visual_board = VisualBoard(game.board)
@@ -189,6 +199,7 @@ class Interface:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
+                    break
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_position = pygame.mouse.get_pos()
                     for card in visual_board.cards:
@@ -213,10 +224,12 @@ class Interface:
         if screen_mode == 4:
             screen.fill((180, 180, 180))
             if game.points[0] <= 50:
-                score = "Final score: " + str(5100 - game.points[0]*100)
+                final_score = 5100 - game.points[0]*100
+                saving.save_score(final_score)
+                final_score_text = "Final score: " + str(final_score)
             else:
                 score = "Score: 0"
-            win_text = font.render(score, (0,0,0), bgcolor = (120,120,120))
+            win_text = font.render(final_score_text, (0,0,0), bgcolor = (120,120,120))
             again_text = font.render("Click anywhere to return to menu", (0, 0, 0), size=40)
             screen.blit(win_text[0], (40,150))
             screen.blit(again_text[0], (10,230))
@@ -224,12 +237,27 @@ class Interface:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
+                    break
                 if event.type == pygame.MOUSEBUTTONDOWN:
-                    game = Game(8)
-                    visual_board = VisualBoard(game.board)
-                    for card in visual_board.cards:
-                        all_sprites.add(card[0])
-                    all_sprites.draw(screen)
-                    game_menu.update(0,270,640,70)
-                    end = False
+                    screen_mode = 0
+
+        if screen_mode == 5:
+            screen.fill((180, 130, 180))
+            saved_score = saving.read_score()
+
+            if saved_score:
+                score = "Your current highscore is " + str(saved_score)
+            else:
+                score = "You have not yet set a highscore"
+
+            score_text = font.render(score, (0,0,0), size=30)
+            again_text = font.render("Click anywhere to return to menu", (0, 0, 0), size=25)
+            screen.blit(score_text[0], (40,150))
+            screen.blit(again_text[0], (10,230))
+            pygame.display.update()
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    break
+                if event.type == pygame.MOUSEBUTTONDOWN:
                     screen_mode = 0

@@ -1,75 +1,14 @@
-from random import shuffle
-
-
-class Board:
-    """Board class keeps track of all the cards in the memory game
-
-    Attributes:
-        cards(array): a list of all the cards on the current board in random order
-        size(int): the amount of pairs in the game
-    """
-    def __init__(self, size):
-        """Constructor, creates a board of cards used in the memory game
-
-        Args:
-            size (int): The amount of pairs on the board
-        """
-        self.cards = []
-        self.size = size
-        for i in range(self.size):
-            self.cards.append(Card(i+1))
-            self.cards.append(Card(i+1))
-        shuffle(self.cards)
-
-    def open_card(self, card):
-        """Opens a card on the board
-
-        Args:
-            card (int): The number of the card being opened
-
-        Returns:
-            Boolean: True, if the card was succesfully opened
-        """
-        if not self.cards[card].open:
-            self.cards[card].open = True
-            return self.cards[card].value
-        return False
-
-    def close_card(self, card):
-        """Closes a card on the board
-
-        Args:
-            card (int): The number of the card being closed
-        """
-        self.cards[card].open = False
-
-
-class Card:
-    """Class that represents a singular card in the memory game
-
-    Attributes:
-        value(int): the value of the card that is used to match it's pair
-        open(boolean): wherer the card is open or closed 
-    """
-    def __init__(self, value):
-        """Constructor for the card Class
-
-        Args:
-            value (int): The value of the card. There are 2 matching cards of each value on the board
-        """
-        self.value = value
-        self.open = False
-
+from board import Board
 
 class Game:
     """Game class keeps track of all the logic in the memory game
-    
+
     Attributes:
         board(Board): the game board associated with the game
         players(int): the amount of players in the game
         turn(int): used to keep track of the player turn
         points(array): keeps track of player points, [0] for player 1, [1] for player 2
-        not_closing(boolean): keeps track of if the currently open pair will be closed or 
+        not_closing(boolean): keeps track of if the currently open pair will be closed or
                             not after a delay. used to circumvent a situation with pygame
                             display updates
         saved(tuple): keeps track of the value and location of the last open card
@@ -98,25 +37,13 @@ class Game:
             end (bool): Wheter or not this card is the second card opened
 
         Returns:
-            boolean: True if a card was successfully opened, false otherwise (if the card was already open)
+            boolean: True if a card was successfully opened,
+            False otherwise (if the card was already open)
         """
         card_value = self.board.open_card(card)
         if card_value:
             if end:
                 self.not_closing = self.compare(card_value)
-                self.turn = 3-self.turn #2 + 1 = 3, easily changes the turn between the two values
-            else:
-                self.saved = (card, card_value)
-            return True
-        return False
-
-    def open_card(self, card, end):
-        #disregard
-        card_value = self.board.open_card(card)
-        if card_value:
-            if end:
-                if not self.compare(card_value):
-                    self.close_pair(card)
                 self.turn = 3-self.turn
             else:
                 self.saved = (card, card_value)
@@ -130,7 +57,8 @@ class Game:
             card_value (int): the value of the card being compared
 
         Returns:
-            boolean: True if the compared card matches with the last saved card, False otherwise
+            boolean: True if the compared card matches with the last saved card,
+            False otherwise
         """
         if card_value == self.saved[1]:
             self.points[self.turn-1] += 1
@@ -160,14 +88,19 @@ class Game:
             self.board.close_card(self.saved[0])
 
 class SinglePlayerGame(Game):
+
+    """Single player version of the usual game logic. Most attributes are
+    shared with the regular game logic class
+
+    Changed attributes (refer to base class for the rest):
+        turn(int): not used
+        points(array): keeps track of player score, [0] for turns taken, [1] for
+                    the total number of pairs opened so that end_game can be utilized
+    """
+
     def __init__(self, size):
         super().__init__(size)
         self.players = 1
-        #in single player games, the first point slot (0) is used to track
-        #the total number of turns taken to beat the game (for a score)
-
-        #the second slot (1) is used to keep track of the found pairs so that end_game can be called
-        #recycling!
 
     def open_simple(self, card, end):
         card_value = self.board.open_card(card)

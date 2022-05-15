@@ -2,9 +2,9 @@
 
 ## Sovelluksen tarkoitus
 
-Sovelluksen avulla käyttäjä voi pelata satunnaisesti generoitua muistipeliä aikaa vastaan, tai vuoropohjaisesti toisen pelaajan kanssa.
+Sovelluksen avulla käyttäjä voi pelata satunnaisesti generoitua muistipeliä yksinpelinä, tai vuoropohjaisesti toisen pelaajan kanssa.
 
-## Käyttöliittymäluonnos
+## Käyttöliittymä
 
 Sovelluksessa on kolme eri näkymää.
 
@@ -12,17 +12,15 @@ Sovelluksessa on kolme eri näkymää.
 
 2. Muistipeli, jossa voi pelata muistipeliä. Muistipelin päätyttyä siirrytään pelin päätösruutuun.
 
-3. Pelin päätösruutu, josta voi aloittaa uuden pelin tai palata käynnistysvalikkoon.
+3. Pelin päätösruutu, josta voi palata käynnistysvalikkoon.
 
-## Perusversion tarjoama toiminnallisuus
+## Toiminnallisuus
 
-Pelaaja voi pelata muistipeliä kaksinpelinä. *(Valmis)*, Muistipeli sisältää satunnaisessa järjestyksessä olevia kortteja jotka voidaan avata klikkaamalla niistä. *(Valmis)* Kun kaksi korttia on avattu, jos ne ovat sama kortti, ne jäävät auki. *(Valmis)* Muuten ne sulkeutuvat. *(Valmis)* Molemmilla pelaajilla on pisteet, joita saa lisää avaamalla pareja onnistuneesti. *(Valmis)*
+Pelaaja voi pelata muistipeliä yksin- tai kaksinpelinä. Muistipeli sisältää satunnaisessa järjestyksessä olevia kortteja jotka voidaan avata klikkaamalla niistä. Kun kaksi korttia on avattu, jos ne ovat sama kortti, ne jäävät auki. Muuten ne sulkeutuvat. Kaksinpelissä molemmilla pelaajilla on pisteet, joita saa lisää avaamalla pareja onnistuneesti. Yksinpelissä pisteet vähenevät sitä mukaan kun kortteja avataan, ja tarkoitus on löytää kaikki parit mahdollisimman vähillä avauksilla.
 
-## Jatkokehitysideoita
+## Jatkokehitys
 
 Perusversion jälkeen muistipeliä voidaan kehittää ehkä esim seuraavin keinoin:
 
 - Eri kokoisia pelejä (eri määrä kortteja)
 - Enemmän kuin 2 pelaajaa
-- Ajoitettu yksinpelitila ("kelloa vastaan")
-- "Scoreboard"

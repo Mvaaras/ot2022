@@ -28,7 +28,7 @@ Muistipelissä tarkoitus on löytää kaksi samaa korttia. Muistipelisovelluksel
 
 ## Hyödyllisiä komentoja
 
-Testien ajaminen: "poetry run invoke test"
+Testien ajaminen: "poetry run invoke test" _huomaa, että testaamiseen liittyvien komentojen ajaminen tyhjentää aiemmin tallennetut tulokset_
 
 Coverage report: "poetry run invoke coverage-report"
 

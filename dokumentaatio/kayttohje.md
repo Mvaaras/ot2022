@@ -13,3 +13,7 @@ Lataa projektin viimeisin versio sivupalkin "Releases" osiosta
 - Pelin käynnistysvalikosta voi valita pelitilan riippuen siitä, haluatko pelata yksin vai kaverin kanssa.
 - Yksinpelissä tarkoituksena on löytää kaikki parit mahdollisimman vähin virhein. Jokainen yritys vähentää pisteitä!
 - Kaksinpelissä kortteja avataan vuorotellen toisen pelaajan kanssa. Yritä löytää enemmän pareja kuin vastustajasi!
+
+## Tallennettujen tulosten tyhjennys
+
+Jos haluat tyhjentää tallennetun huipputuloksen, avaa tiedosto src/assets/score.txt ja poista sieltä löytyvä numero.
